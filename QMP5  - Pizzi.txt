@@ -1,0 +1,78 @@
+public class Usuario{
+	private Array<Guardaropa> guardaropa;
+	private Array<Recomendacion> recomendacionesRecibidas;
+
+	void recomendar(Usuario usuario,TipoRecomendacion agregarOSacar,Prenda prenda){
+		usuario.agregarRecomendacion(agregarOSacar,prenda);
+	}
+
+	void agregarRecomendacion(Usuario usuario, Prenda prenda){
+		recomendacion = new Recomendacion(usuario,prenda);
+		recomendacionesRecibidas.add(recomendacion);
+	}
+
+	void aceptarRecomendacion(){
+		recomendacionesRecibidas.last.aceptar()
+	}
+
+	void rechazarRecomendacion(){
+		recomendacionesRecibidas.last.rechazar()
+	}
+}
+
+public class Recomendacion{
+	private Usuario usuario;
+	private TipoRecomendacion tipoRecomendacion;
+
+	public void aceptar(){
+		tipoRecomendacion.aceptar();
+	{
+
+	public void rechazar(){
+		tipoRecomendacion.rechazar();
+	{
+}
+
+public enum TipoRecomendacion{
+	AGREGARPRENDA,
+	QUITARPRENDA
+}
+
+public class Guardarropas{
+	private Array<Prenda> prendas;
+
+}
+
+
+public class Prenda{
+	private TipoDePrenda tipoDePrenda;
+	private Material material;
+	private Color colorPrincipal;
+	private Categoria categoria
+	
+	private Color colorSecundario;
+
+	public Prenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal){
+		this.validarPrenda();
+		this.tipoDePrenda=tipoDePrenda;
+		this.material=material;
+		this.colorPrincipla=colorPrincipal;
+		this.categoria=tipoDePrenda.categoria();
+	}
+
+	private void validarPrenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal){
+		if (tipoDePrenda == null){
+			throw new FaltaTipoDePrendaExcepcion();
+		}
+		if (material == null){
+			throw new FaltaMaterialExcepcion();
+		}
+		if (color == null){
+			throw new FaltaColorExcepcion();
+		}
+	}
+
+	public void setColorSecundario(Color colorSecundario){
+		this.colorSecundario=colorSecundario;
+	}
+}
